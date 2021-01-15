@@ -26,11 +26,10 @@ function watch () {
             baseDir: './public/'
         }
     });
-    
+
     gulp.watch('./src/sass/**/*.sass', style);
     gulp.watch('./src/js/**/*.js', scripts).on('change', browserSync.reload);
     gulp.watch('./**/*.html').on('change', browserSync.reload);
-    gulp.watch('/src/js/**/*.js').on('change', browserSync.reload);
 }
 
 exports.style = style;
