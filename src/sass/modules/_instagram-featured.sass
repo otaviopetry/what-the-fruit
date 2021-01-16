@@ -1,2 +1,27 @@
 .instagram-featured
-    color: orange
+    padding: 5rem 0
+
+    .container
+        max-width: $xl
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+
+    
+    &__title
+        color: $almond
+        font-size: 3rem
+        text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2)
+        margin-bottom: 0
+
+    &__posts
+        display: flex
+        width: 100%
+        justify-content: space-between
+
+        .post
+            &:nth-child(2)
+                margin-top: 4rem
+
+    
