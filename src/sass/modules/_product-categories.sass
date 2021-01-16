@@ -1,2 +1,31 @@
 .product-categories
-    color: orange
+    padding: 1.5rem 0
+    background-color: $white
+    color: $gray
+    
+    .container
+        display: flex
+        justify-content: center
+        align-items: center
+
+.product-category-list
+    list-style: none
+    display: flex
+    
+    &__category
+        display: flex
+        flex-direction: column
+        padding: 1.5rem
+        text-align: center
+
+        &:first-child
+            padding-left: 0
+
+        &:last-child
+            padding-right: 0
+
+        img
+            border-radius: 100%
+            max-width: 80px
+            margin: 0 auto 1rem
+
