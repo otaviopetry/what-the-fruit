@@ -34,17 +34,50 @@
         .col
             width: 50%
 
+            &:nth-child(1)
+                .banner
+                    img
+                        border-top-left-radius: 2rem
+                        border-top-right-radius: 0.1rem
+
+                    &__content
+                        border-bottom-left-radius: 2rem
+                        border-bottom-right-radius: 1rem
+
             &:nth-child(2)
-                .banner:nth-child(1)
-                    margin-top: -3rem
+                .banner
+                    padding-right: 0
+
+                    &:nth-child(1)
+                        margin-top: -3rem
+
+                        .banner__content
+                            border-bottom-right-radius: 2rem
+                            border-bottom-left-radius: 0.1rem
+
+                        img
+                            border-top-left-radius: 0.1rem
+                            border-top-right-radius: 2rem
+
+                    &:nth-child(2)
+
+                        img
+                            border-top-left-radius: 0.1rem
+                            border-top-right-radius: 2rem
+
+                        .banner__content
+                            border-bottom-right-radius: 2rem
+                            border-bottom-left-radius: 0.1rem
+
 
         .banner
             display: flex
             justify-content: flex-start
+            overflow: hidden
     
             flex-direction: column
             padding: 0 0.5rem
-            margin-bottom: 1.5rem
+            margin-bottom: 1rem
             
             &__content
                 background-color: #e0e0e0
