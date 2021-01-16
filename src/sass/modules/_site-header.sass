@@ -1,0 +1,52 @@
+$navBreakpoint: $lg
+    
+.site-header
+
+    .container
+        display: flex
+        justify-content: space-between
+        align-items: center
+        flex-wrap: wrap
+
+        padding: 0 1.5rem
+
+    ul
+        list-style: none
+        display: flex
+    
+    &--navigation
+        display: none
+        width: 100%
+
+        @media screen and (min-width: $navBreakpoint)
+            display: flex
+            order: 2
+            width: auto
+
+        &.active
+            display: flex
+            order: 3
+
+        ul
+            flex-direction: column
+            text-align: center
+            width: 100%
+
+            @media screen and (min-width: $navBreakpoint)
+                flex-direction: row
+        
+        li
+            padding: 1rem
+
+    
+    ul.quick-links
+        order: 2
+        
+        @media screen and (min-width: $navBreakpoint)
+            order: 3
+
+        li
+            padding: 0.25rem
+
+
+        

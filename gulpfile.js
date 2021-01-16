@@ -5,9 +5,9 @@ const browserSync = require('browser-sync').create();
 const concat = require('gulp-concat');
 
 function style () {
-    return gulp.src('./src/sass/**/*.sass')
+    return gulp.src('./src/sass/styles.sass')
         .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest('./public'))
+        .pipe(gulp.dest('./dist'))
         .pipe(browserSync.stream())
 }
 
@@ -17,19 +17,24 @@ function scripts () {
             presets: ['@babel/env']
         }))
         .pipe(concat('scripts.js'))
-        .pipe(gulp.dest('public'))
+        .pipe(gulp.dest('dist'))
+}
+
+function copyHtml () {
+    return gulp.src('./src/**/*.html')
+        .pipe(gulp.dest('./dist'));
 }
 
 function watch () {
     browserSync.init({
         server: {
-            baseDir: './public/'
+            baseDir: './dist/'
         }
     });
 
     gulp.watch('./src/sass/**/*.sass', style);
     gulp.watch('./src/js/**/*.js', scripts).on('change', browserSync.reload);
-    gulp.watch('./**/*.html').on('change', browserSync.reload);
+    gulp.watch('./src/**/*.html', copyHtml).on('change', browserSync.reload);
 }
 
 exports.style = style;
