@@ -1,0 +1,56 @@
+.product-benefits
+    padding: 7rem 0 0
+    background-color: $lightGray
+    color: $gray
+
+    &::after
+        content: ""
+        background-color: $white
+        display: block
+        height: 18rem
+        margin-top: -12rem
+    
+    .container
+        display: flex
+        padding: 0 3rem
+        
+    header
+        width: 30%
+
+        span.description
+            font-style: italic
+
+        .headline
+            margin-top: 0.75rem
+            margin-bottom: 1.75rem
+            font-size: 2.2rem
+
+    &__features
+        width: 70%
+        display: flex
+        flex-flow: row wrap        
+        padding-left: 10%
+
+        .col
+            width: 50%
+
+            &:nth-child(2)
+                .banner:nth-child(1)
+                    margin-top: -3rem
+
+        .banner
+            display: flex
+            justify-content: flex-start
+    
+            flex-direction: column
+            padding: 0 0.5rem
+            margin-bottom: 1.5rem
+            
+            &__content
+                background-color: #e0e0e0
+                text-align: center
+                padding: 1rem
+
+                .title
+                    font-weight: bold
+
