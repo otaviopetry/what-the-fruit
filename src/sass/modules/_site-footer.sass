@@ -29,6 +29,7 @@
         font-style: italic
         color: $gray
         max-width: 200px
+        font-family: 'PT Sans', sans-serif
 
     &__logo
         background-color: $white
@@ -54,15 +55,19 @@
             border-bottom: 1px solid $gray
             margin-top: 4rem
             padding-bottom: 0.5rem
+            transition: all 0.2s
 
             &.active
-                border-bottom-color: $almond
+                border-bottom-width: 2px
 
         input
             display: inline
             border: 0
             width: 100%
-            color: rgba(0,0,0,0.7)                
+            color: rgba(0,0,0,0.7)
+
+            &:focus
+                border: 0          
         
         button[type="submit"]
             border: 0
