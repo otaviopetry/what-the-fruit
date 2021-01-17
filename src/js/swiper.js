@@ -1,7 +1,13 @@
 var heroSwiper = new Swiper('.hero-unit .swiper-container', {
     // Optional parameters
     direction: 'horizontal',
-    loop: true,
+    autoplay: {
+        delay: 4000
+    },
+    stopOnLastSlide: true,
+    disableOnInteraction: true,
+    effect: 'fade',
+
   
     // If we need pagination
     pagination: {
@@ -24,6 +30,7 @@ var featuredProductSwiper = new Swiper('.product-gallery .swiper-container', {
     // Optional parameters
     direction: 'horizontal',
     loop: true,
+    effect: 'cube',
   
     // If we need pagination
     pagination: {
