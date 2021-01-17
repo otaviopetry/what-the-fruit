@@ -3,6 +3,7 @@ const babel = require('gulp-babel');
 const sass = require('gulp-sass');
 const browserSync = require('browser-sync').create();
 const concat = require('gulp-concat');
+const imagemin = require('gulp-imagemin');
 
 function style () {
     return gulp.src('./src/sass/styles.sass')
@@ -25,8 +26,9 @@ function copyHtml () {
         .pipe(gulp.dest('./dist'));
 }
 
-function copyImages () {
-    return gulp.src('./src/images/*.*')
+function handleImages () {
+    return gulp.src('./src/images/*')
+        .pipe(imagemin())
         .pipe(gulp.dest('./dist/images/'));
 }
 
@@ -38,9 +40,9 @@ function watch () {
     });
 
     gulp.watch('./src/sass/**/*.sass', style);
+    gulp.watch('./src/*', handleImages);
     gulp.watch('./src/js/**/*.js', scripts).on('change', browserSync.reload);
     gulp.watch('./src/**/*.html', copyHtml).on('change', browserSync.reload);
 }
 
-exports.copyImages = copyImages;
 exports.watch = watch;
