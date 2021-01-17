@@ -25,6 +25,11 @@ function copyHtml () {
         .pipe(gulp.dest('./dist'));
 }
 
+function copyImages () {
+    return gulp.src('./src/images/*.*')
+        .pipe(gulp.dest('./dist/images/'));
+}
+
 function watch () {
     browserSync.init({
         server: {
@@ -37,5 +42,5 @@ function watch () {
     gulp.watch('./src/**/*.html', copyHtml).on('change', browserSync.reload);
 }
 
-exports.style = style;
+exports.copyImages = copyImages;
 exports.watch = watch;
