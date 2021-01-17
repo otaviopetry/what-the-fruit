@@ -2,13 +2,17 @@ const gulp = require('gulp');
 const babel = require('gulp-babel');
 const sass = require('gulp-sass');
 const browserSync = require('browser-sync').create();
+const uglify = require('gulp-uglify');
 const concat = require('gulp-concat');
-const imagemin = require('gulp-imagemin');
+const imageMin = require('gulp-image');
+const htmlMin = require('gulp-htmlmin');
+const cleanCSS = require('gulp-clean-css');
 
 function style () {
     return gulp.src('./src/sass/styles.sass')
         .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest('./dist'))
+        .pipe(cleanCSS())
+        .pipe(gulp.dest('./dist/css/'))
         .pipe(browserSync.stream())
 }
 
@@ -18,17 +22,19 @@ function scripts () {
             presets: ['@babel/env']
         }))
         .pipe(concat('scripts.js'))
-        .pipe(gulp.dest('dist'))
+        .pipe(uglify())
+        .pipe(gulp.dest('./dist/js/'))
 }
 
 function copyHtml () {
     return gulp.src('./src/**/*.html')
+        .pipe(htmlMin({ collapseWhitespace: true }))
         .pipe(gulp.dest('./dist'));
 }
 
 function handleImages () {
     return gulp.src('./src/images/*')
-        .pipe(imagemin())
+        .pipe(imageMin())
         .pipe(gulp.dest('./dist/images/'));
 }
 
@@ -40,7 +46,7 @@ function watch () {
     });
 
     gulp.watch('./src/sass/**/*.sass', style);
-    gulp.watch('./src/*', handleImages);
+    gulp.watch('./src/images/*', handleImages);
     gulp.watch('./src/js/**/*.js', scripts).on('change', browserSync.reload);
     gulp.watch('./src/**/*.html', copyHtml).on('change', browserSync.reload);
 }
