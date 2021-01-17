@@ -45,6 +45,10 @@ function watch () {
         }
     });
 
+    gulp.watch('./src/*', () => {
+        return gulp.src('./src/vendors/*')
+            .pipe(gulp.dest('./dist/vendors/'));
+    });    
     gulp.watch('./src/sass/**/*.sass', style);
     gulp.watch('./src/images/*', handleImages);
     gulp.watch('./src/js/**/*.js', scripts).on('change', browserSync.reload);

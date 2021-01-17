@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VNDA Challenge</title>
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./vendors/swiper-bundle.min.css">
     
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,800;1,800&display=swap" rel="stylesheet"> 
@@ -35,7 +36,17 @@
 </header>
 
 <section class="hero-unit">
-hero-unit
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" style="background-image: url('./images/more-citrics.jpg')"></div>
+            <div class="swiper-slide" style="background-image: url('./images/pomegranate.jpg')"></div>
+            <div class="swiper-slide" style="background-image: url('./images/berries.jpg')"></div>
+        </div>
+        <div class="swiper-pagination"></div>
+    
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
 </section>
 
 <section class="product-categories">
@@ -119,7 +130,17 @@ hero-unit
             </div>
         </header>
         <div class="product-gallery">
-            <img src="https://via.placeholder.com/720x480" alt="">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" style="background-image: url('./images/more-citrics.jpg')"></div>
+                    <div class="swiper-slide" style="background-image: url('./images/pomegranate.jpg')"></div>
+                    <div class="swiper-slide" style="background-image: url('./images/berries.jpg')"></div>
+                </div>
+                <div class="swiper-pagination"></div>
+            
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
         </div>
     </div>
 </section>
@@ -174,6 +195,7 @@ hero-unit
     </div>
 </footer>
 
+<script src="./vendors/swiper-bundle.min.js"></script>
 <script src="./js/scripts.js"></script>
 </body>
 </html>
