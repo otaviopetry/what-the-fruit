@@ -6,6 +6,7 @@ var heroSwiper = new Swiper('.hero-unit .swiper-container', {
     },
     stopOnLastSlide: true,
     disableOnInteraction: true,
+    loop: true,
     effect: 'fade',
 
   
