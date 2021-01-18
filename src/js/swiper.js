@@ -4,7 +4,6 @@ var heroSwiper = new Swiper('.hero-unit .swiper-container', {
     autoplay: {
         delay: 4000
     },
-    stopOnLastSlide: true,
     disableOnInteraction: true,
     loop: true,
     effect: 'fade',
