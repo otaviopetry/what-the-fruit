@@ -21,6 +21,13 @@
         justify-content: space-between
         align-items: flex-start
         flex-wrap: wrap
+        width: 90%
+
+        @media screen and (max-width: $md)
+            width: 80%
+
+        @media screen and (max-width: $sm)
+            justify-content: center
 
     
     .title
@@ -49,6 +56,10 @@
         @media screen and (max-width: $lg)
             width: 50%
             order: 2
+
+        @media screen and (max-width: $sm)
+            width: 60%
+            text-align: center
 
     
     .contact-form
@@ -88,10 +99,18 @@
         @media screen and (max-width: $lg)
             width: 50%
             order: 3
+
+        @media screen and (max-width: $sm)
+            width: 60%
+            text-align: center
+            
             
         a
             display: flex
             align-items: center
+            
+            @media screen and (max-width: $sm)
+                justify-content: center
 
             i
                 font-size: 1.5rem

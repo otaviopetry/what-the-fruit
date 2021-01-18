@@ -10,36 +10,37 @@
         .swiper-slide
             background-size: cover
             background-position: center
-            position: relative
+            display: flex
+
+            @media screen and (max-width: $sm)
+                justify-content: center
 
             p   
-                position: absolute
                 color: #fff
                 font-size: 3.3rem
                 font-weight: bolder
                 max-width: 560px
                 text-shadow: 2px 2px 2px $gray
+                align-self: flex-end
 
-            &.oranges
-                p                    
-                    bottom: 2rem
-                    left: 4rem
-                
-            &.avocado
-                p
-                    left: 4rem
-                    top: 2rem
+                @media screen and (min-width: $sm)
+                    margin-left: 3rem
 
-            &.pineapple
-                p
-                    right: 4rem
-                    top: 2rem
-                    text-align: right
+                @media screen and (max-width: $sm)
+                    align-self: center
+                    font-size: 2rem
+                    max-width: 70%
+                    text-align: center
 
             &.melon
-                p
-                    bottom: 2rem
-                    right: 4rem
+                @media screen and (min-width: $sm)
+                    justify-content: flex-end
+
+                @media screen and (min-width: $sm)
+                    p
+                        margin-right: 3rem
+                    
+
 
 
                 
