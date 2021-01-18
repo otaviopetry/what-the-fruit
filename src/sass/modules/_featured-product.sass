@@ -1,11 +1,14 @@
 .featured-product
     background-color: $lightGray
-    padding: 3rem 0
+    padding: 3rem 0 4rem
     position: relative
     background-image: linear-gradient(90deg, $lightGray 0%, $lightGray 85%, $white 85%, $white 100%)
 
     @media screen and (min-width: 1500px)
         background-image: linear-gradient(90deg, $lightGray 0%, $lightGray 75%, $white 75%, $white 100%)
+
+    @media screen and (max-width: $lg)
+        background-image: linear-gradient(90deg, $lightGray 0%, $lightGray 90%, $lightGray 100%, $lightGray 100%)
 
     .container
         overflow: hidden
