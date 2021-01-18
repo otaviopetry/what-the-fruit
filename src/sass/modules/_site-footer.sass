@@ -17,10 +17,11 @@
 
     .container
         max-width: $xl
-        width: 100%
         display: flex
         justify-content: space-between
         align-items: flex-start
+        flex-wrap: wrap
+
     
     .title
         font-size: 1.5rem
@@ -41,13 +42,21 @@
             width: auto
             filter: grayscale(1)
             
-    nav
+    nav.footer-navigation
         a
             text-decoration: none
+
+        @media screen and (max-width: $lg)
+            width: 50%
+            order: 2
 
     
     .contact-form
         width: 450px
+
+        @media screen and (max-width: $lg)
+            width: 100%
+            order: 1
 
         form
             display: flex
@@ -75,6 +84,10 @@
     
     .social-links
         margin-top: 0
+
+        @media screen and (max-width: $lg)
+            width: 50%
+            order: 3
             
         a
             display: flex
