@@ -7,6 +7,7 @@ const concat = require('gulp-concat');
 const imageMin = require('gulp-image');
 const htmlMin = require('gulp-htmlmin');
 const cleanCSS = require('gulp-clean-css');
+const newer = require('gulp-newer');
 
 function style () {
     return gulp.src('./src/sass/styles.sass')
@@ -34,8 +35,14 @@ function copyHtml () {
 
 function handleImages () {
     return gulp.src('./src/images/*')
+        .pipe(newer('./dist/images/'))
         .pipe(imageMin())
         .pipe(gulp.dest('./dist/images/'));
+}
+
+function copyVendors () {
+    return gulp.src('./src/vendors/*')
+        .pipe(gulp.dest('./dist/vendors/'));
 }
 
 function watch () {
@@ -44,15 +51,13 @@ function watch () {
             baseDir: './dist/'
         }
     });
-
-    gulp.watch('./src/*', () => {
-        return gulp.src('./src/vendors/*')
-            .pipe(gulp.dest('./dist/vendors/'));
-    });    
+    
     gulp.watch('./src/sass/**/*.sass', style);
-    gulp.watch('./src/images/*', handleImages);
     gulp.watch('./src/js/**/*.js', scripts).on('change', browserSync.reload);
     gulp.watch('./src/**/*.html', copyHtml).on('change', browserSync.reload);
 }
+
+exports.images = handleImages;
+exports.vendors = copyVendors;
 
 exports.watch = watch;

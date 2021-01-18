@@ -24,7 +24,7 @@
             font-style: italic
 
         .headline
-            font-size: 2.2rem
+            font-size: 2.5rem
         
         p
             font-size: 1.3rem
@@ -32,14 +32,14 @@
         i.fas
             align-self: center
             font-size: 7rem
-            transform: translateY(80%)
+            transform: translateY(60%)
             opacity: 0.9
             color: $almond
             text-shadow: 2px 2px 0 rgba(0,0,0,1)
             
 
     &__features
-        width: 70%
+        width: 60%
         display: flex
         flex-flow: row wrap        
         padding-left: 10%
@@ -65,6 +65,8 @@
                         margin-top: -3rem
                         
                         img
+                            max-height: 300px
+                            object-fit: cover
                             border-top-left-radius: 0.1rem
                             border-top-right-radius: 2rem
 
@@ -74,8 +76,10 @@
 
 
                     &:nth-child(2)
-
                         img
+                            max-height: 320px
+                            object-fit: cover
+                            object-position: top
                             border-top-left-radius: 0.75rem
                             border-top-right-radius: 2rem
 
@@ -95,13 +99,17 @@
 
             .title
                 color: $gray
+                font-size: 1.4rem
+                font-weight: bold
+                font-style: italic
             
             &__content
                 background-color: #e0e0e0
                 color: #444
                 text-align: center
-                padding: 1rem
+                padding: 1.5rem
 
-                .title
-                    font-weight: bold
+                p
+                    font-size: 1.1rem
+                    padding: 0 0.5rem
 
