@@ -34,7 +34,7 @@ function copyHtml () {
 }
 
 function handleImages () {
-    return gulp.src('./src/images/*')
+    return gulp.src('./src/images/**/*')
         .pipe(newer('./dist/images/'))
         .pipe(imageMin())
         .pipe(gulp.dest('./dist/images/'));
