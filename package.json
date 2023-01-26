@@ -4,6 +4,7 @@
   "description": "Project developed as a challenge in a job application at Vnda E-commerce.",
   "main": "index.js",
   "scripts": {
+    "build": "gulp build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Otavio Petry",

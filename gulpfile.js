@@ -57,7 +57,19 @@ function watch () {
     gulp.watch('./src/**/*.html', copyHtml).on('change', browserSync.reload);
 }
 
+async function build () {
+    await handleImages();
+    await copyVendors();
+    await copyHtml();
+    await scripts();
+    await style();
+}
+
 exports.images = handleImages;
 exports.vendors = copyVendors;
+exports.html = copyHtml;
+exports.scripts = scripts;
+exports.style = style;
+exports.build = build;
 
 exports.watch = watch;
